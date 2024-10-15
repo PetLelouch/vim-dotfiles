@@ -41,6 +41,9 @@ set background=dark
 set termguicolors
 let mapleader=" "
 let g:NERDTreeWinPos = "right" 
+" Uncomment if window will be cropped
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6    }    }
+"let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --margin=0,19,19,0"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_section_z = "\ue0a1:%l/%L Col:%c"
