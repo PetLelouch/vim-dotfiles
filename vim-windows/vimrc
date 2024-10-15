@@ -1,0 +1,76 @@
+""" Plugins
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'sainnhe/everforest'
+Plug 'jacoborus/tender.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
+
+
+""" Settings
+syntax on
+colorscheme tender
+set number
+set relativenumber
+set scrolloff=10
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set backspace=indent,eol,start
+set noshowmode
+set cursorline
+set hlsearch
+set splitright
+set splitbelow
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+set encoding=UTF-8
+set background=dark
+set termguicolors
+let mapleader=" "
+let g:NERDTreeWinPos = "right" 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#keymap#enabled = 0
+let g:airline_section_z = "\ue0a1:%l/%L Col:%c"
+let g:Powerline_symbols='unicode'
+let g:airline#extensions#xkblayout#enabled = 0
+let &t_SI = "\<Esc>[6 q" "Cursor mode
+let &t_SR = "\<Esc>[4 q" "Cursor mode
+let &t_EI = "\<Esc>[2 q" "Cursor mode
+
+
+""" Remap
+nnoremap <C-a> ggVG
+nnoremap <silent> <esc> :nohlsearch<CR>
+nnoremap <silent> gd :OmniSharpGotoDefinition<CR>
+nnoremap <silent> <leader>rr :OmniSharpRename<CR>
+nnoremap <silent> <leader>cf :OmniSharpCodeFormat<CR>
+nnoremap <silent> <leader>ca :OmniSharpGetCodeAction<CR>
+nnoremap <silent> <leader>rg :OmniSharpFixUsing<CR>
+nnoremap <silent> <leader>fu :OmniSharpFindUsage<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <silent> <leader>fj :Buffers<CR>
+nnoremap <silent> <leader>fg :Rg<CR>
+nnoremap <silent> <leader>vv :vsplit<CR>
+nnoremap <silent> <leader>hh :split<CR>
+
+inoremap jk <esc>
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+vnoremap <C-c> "*y
+vnoremap <silent> <C-j> :m '>+1<CR>gv=gv"
+vnoremap <silent> <C-k> :m '<-2<CR>gv=gv"
