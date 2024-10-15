@@ -1,7 +1,6 @@
 """ Plugins
 call plug#begin()
 Plug 'preservim/nerdtree'
-Plug 'sainnhe/everforest'
 Plug 'jacoborus/tender.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
@@ -42,7 +41,7 @@ set termguicolors
 let mapleader=" "
 let g:NERDTreeWinPos = "right" 
 " Uncomment if window will be cropped
-"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6    }    }
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6   }   }
 "let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --margin=0,19,19,0"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
@@ -58,11 +57,9 @@ let &t_EI = "\<Esc>[2 q" "Cursor mode
 nnoremap <C-a> ggVG
 nnoremap <silent> <esc> :nohlsearch<CR>
 nnoremap <silent> gd :OmniSharpGotoDefinition<CR>
-nnoremap <silent> <leader>rr :OmniSharpRename<CR>
-nnoremap <silent> <leader>cf :OmniSharpCodeFormat<CR>
-nnoremap <silent> <leader>ca :OmniSharpGetCodeAction<CR>
-nnoremap <silent> <leader>rg :OmniSharpFixUsing<CR>
 nnoremap <silent> <leader>fu :OmniSharpFindUsage<CR>
+nnoremap <silent> <leader>rg :OmniSharpFixUsing<CR>
+nnoremap <silent> <leader>d :OmniSharpDocumentation<CR>
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fj :Buffers<CR>
