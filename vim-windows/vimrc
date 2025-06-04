@@ -1,7 +1,8 @@
 """ Plugins
 call plug#begin()
 Plug 'preservim/nerdtree'
-Plug 'jacoborus/tender.vim'
+Plug 'vim-scripts/VimCompletesMe'
+Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -16,7 +17,6 @@ call plug#end()
 
 """ Settings
 syntax on
-colorscheme tender
 set number
 set relativenumber
 set scrolloff=10
@@ -36,8 +36,10 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum
 set encoding=UTF-8
-set background=dark
 set termguicolors
+set clipboard=unnamedplus
+set vb t_vb=
+set guifont=Cascadia_Code:h10
 let mapleader=" "
 let g:NERDTreeWinPos = "right" 
 " Uncomment if window will be cropped
@@ -51,7 +53,10 @@ let g:airline#extensions#xkblayout#enabled = 0
 let &t_SI = "\<Esc>[6 q" "Cursor mode
 let &t_SR = "\<Esc>[4 q" "Cursor mode
 let &t_EI = "\<Esc>[2 q" "Cursor mode
-
+let ayucolor="dark"
+colorscheme ayu
+"Добавить если нужно автоматическое раскрытие gvim на весь экран
+"au GUIEnter * simalt ~x 
 
 """ Remap
 nnoremap <C-a> ggVG
