@@ -37,9 +37,9 @@ set wildmode=longest:full,full
 set wildoptions=pum
 set encoding=UTF-8
 set termguicolors
-set clipboard=unnamedplus
 set vb t_vb=
 set guifont=Cascadia_Code:h10
+
 let mapleader=" "
 let g:NERDTreeWinPos = "right" 
 " Uncomment if window will be cropped
